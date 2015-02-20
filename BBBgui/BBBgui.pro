@@ -18,12 +18,22 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     musicwindow.cpp \
-    radarwindow.cpp
+    radarwindow.cpp \
+    information.cpp \
+    options.cpp \
+    GPIOConst.cpp \
+    GPIOManager.cpp
 
 HEADERS  += mainwindow.h \
     musicwindow.h \
-    radarwindow.h
+    radarwindow.h \
+    information.h \
+    options.h \
+    GPIOConst.h \
+    GPIOManager.h
 
 FORMS    += mainwindow.ui \
     musicwindow.ui \
-    radarwindow.ui
+    radarwindow.ui \
+    information.ui \
+    options.ui

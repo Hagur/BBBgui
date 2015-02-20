@@ -26,7 +26,7 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QPushButton *musicButton;
-    QPushButton *exitButton;
+    QPushButton *optionsButton;
     QPushButton *radarButton;
     QPushButton *dataButton;
     QToolBar *mainToolBar;
@@ -45,10 +45,10 @@ public:
         font.setFamily(QString::fromUtf8("Umpush"));
         font.setPointSize(20);
         musicButton->setFont(font);
-        exitButton = new QPushButton(centralWidget);
-        exitButton->setObjectName(QString::fromUtf8("exitButton"));
-        exitButton->setGeometry(QRect(242, 122, 238, 118));
-        exitButton->setFont(font);
+        optionsButton = new QPushButton(centralWidget);
+        optionsButton->setObjectName(QString::fromUtf8("optionsButton"));
+        optionsButton->setGeometry(QRect(242, 122, 238, 118));
+        optionsButton->setFont(font);
         radarButton = new QPushButton(centralWidget);
         radarButton->setObjectName(QString::fromUtf8("radarButton"));
         radarButton->setGeometry(QRect(0, 122, 238, 118));
@@ -73,7 +73,7 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0, QApplication::UnicodeUTF8));
         musicButton->setText(QApplication::translate("MainWindow", "ZENE", 0, QApplication::UnicodeUTF8));
-        exitButton->setText(QApplication::translate("MainWindow", "KIL\303\211P\303\211S", 0, QApplication::UnicodeUTF8));
+        optionsButton->setText(QApplication::translate("MainWindow", "BE\303\201LL\303\215T\303\201SOK", 0, QApplication::UnicodeUTF8));
         radarButton->setText(QApplication::translate("MainWindow", "TOLAT\303\223RADAR", 0, QApplication::UnicodeUTF8));
         dataButton->setText(QApplication::translate("MainWindow", "J\303\201RM\305\260", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
