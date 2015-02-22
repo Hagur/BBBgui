@@ -13,10 +13,13 @@ class MusicWindow : public QWidget
 
 public:
     explicit MusicWindow(QWidget *parent = 0);
+    QTimer *mwTimer;
     ~MusicWindow();
 
 private slots:
     void on_backButton_clicked();
+
+    void mwTimerOver();
 
 private:
     Ui::MusicWindow *ui;

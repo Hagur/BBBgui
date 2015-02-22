@@ -76,6 +76,9 @@
      <pointsize>20</pointsize>
     </font>
    </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="backButton">
    <property name="geometry">

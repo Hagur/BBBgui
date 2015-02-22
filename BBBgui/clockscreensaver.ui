@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ClockScreenSaver</class>
+ <widget class="QWidget" name="ClockScreenSaver">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>272</height>
+   </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>BlankCursor</cursorShape>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLCDNumber" name="timeNumber">
+   <property name="geometry">
+    <rect>
+     <x>1</x>
+     <y>1</y>
+     <width>478</width>
+     <height>270</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>BlankCursor</cursorShape>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="backButton">
+   <property name="geometry">
+    <rect>
+     <x>-6</x>
+     <y>-6</y>
+     <width>492</width>
+     <height>284</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>BlankCursor</cursorShape>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

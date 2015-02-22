@@ -36,6 +36,8 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(480, 272);
+        MainWindow->setCursor(QCursor(Qt::BlankCursor));
+        MainWindow->setFocusPolicy(Qt::StrongFocus);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         musicButton = new QPushButton(centralWidget);

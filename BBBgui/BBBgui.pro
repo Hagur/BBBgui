@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     information.cpp \
     options.cpp \
     GPIOConst.cpp \
-    GPIOManager.cpp
+    GPIOManager.cpp \
+    clockscreensaver.cpp
 
 HEADERS  += mainwindow.h \
     musicwindow.h \
@@ -30,10 +31,12 @@ HEADERS  += mainwindow.h \
     information.h \
     options.h \
     GPIOConst.h \
-    GPIOManager.h
+    GPIOManager.h \
+    clockscreensaver.h
 
 FORMS    += mainwindow.ui \
     musicwindow.ui \
     radarwindow.ui \
     information.ui \
-    options.ui
+    options.ui \
+    clockscreensaver.ui

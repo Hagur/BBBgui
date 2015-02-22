@@ -8,6 +8,7 @@
 #include <fcntl.h>
 #include <poll.h>
 #include <fstream>
+#include "mainwindow.h"
 
 Options::Options(QWidget *parent) :
     QWidget(parent),
@@ -88,6 +89,8 @@ int Options::on_decreaseButton_clicked()
 
 void Options::on_backButton_clicked()
 {
+    MainWindow *w = new( MainWindow );
+    w->show();
     this->close();
 }
 
@@ -106,4 +109,5 @@ int Options::getBrightness()
     stream >> this->brightnessValue;
 
     stream.close();
+    return 0;
 }

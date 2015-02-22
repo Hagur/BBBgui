@@ -2,6 +2,7 @@
 #include "ui_radarwindow.h"
 #include <QPainter>
 #include <QRectF>
+#include "mainwindow.h"
 
 RadarWindow::RadarWindow(QWidget *parent) :
     QWidget(parent),
@@ -23,5 +24,7 @@ RadarWindow::~RadarWindow()
 
 void RadarWindow::on_backButton_clicked()
 {
+    MainWindow *w = new( MainWindow );
+    w->show();
     this->close();
 }

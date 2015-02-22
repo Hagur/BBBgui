@@ -15,6 +15,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    QTimer *wTimer;
     GPIO::GPIOManager* gp = GPIO::GPIOManager::getInstance();
     ~MainWindow();
 
@@ -26,6 +27,8 @@ private slots:
     void on_radarButton_clicked();
 
     void on_dataButton_clicked();
+
+    void wTimerOver();
 
 private:
     Ui::MainWindow *ui;
