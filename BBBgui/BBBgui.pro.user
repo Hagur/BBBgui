@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 3.1.1, 2015-02-21T04:33:59. -->
+<!-- Written by QtCreator 3.1.1, 2015-02-23T22:17:02. -->
 <qtcreator>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -54,9 +54,9 @@
  <data>
   <variable>ProjectExplorer.Project.Target.0</variable>
   <valuemap type="QVariantMap">
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Beaglebone Black</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Beaglebone Black</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{eefb70a9-f50f-40ec-a8ca-901e72f6dc7d}</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">BBB</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">BBB</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{4c977d86-dc81-4956-a8bf-3fdc716ee443}</value>
    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
@@ -120,7 +120,7 @@
     <value type="bool" key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild">true</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/hagur/qt-bbb/projects/BBBgui/build-BBBgui-Beaglebone_Black-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/hagur/qt-bbb/projects/BBBgui/build-BBBgui-BBB-Release</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -212,7 +212,7 @@
        <value type="QString"></value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedTimes">
-       <value type="QDateTime">2015-02-21T04:17:19</value>
+       <value type="QDateTime">2015-02-23T22:16:10</value>
       </valuelist>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.IgnoreMissingFiles">false</value>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.Incremental">true</value>
@@ -292,7 +292,7 @@
  </data>
  <data>
   <variable>ProjectExplorer.Project.Updater.EnvironmentId</variable>
-  <value type="QByteArray">{b71986e7-04de-4747-abaf-e09edc9d9567}</value>
+  <value type="QByteArray">{97921253-0793-462d-abc2-4aeeef9e0bd4}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.Updater.FileVersion</variable>

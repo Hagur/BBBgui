@@ -28,6 +28,7 @@ MusicWindow::~MusicWindow()
 void MusicWindow::on_backButton_clicked()
 {
     mwTimer->stop();
+    delete mwTimer;
     MainWindow *w = new (MainWindow);
     w->show();
     this->close();
@@ -36,6 +37,8 @@ void MusicWindow::on_backButton_clicked()
 void MusicWindow::mwTimerOver()
 {
     // Lejárt az időzítő, bejön a képernyővédő
+    mwTimer->stop();
+    delete mwTimer;
     ClockScreenSaver *ssw = new( ClockScreenSaver );
     ssw->callingWindow = callingMusic;                   // Eltárolásra kerül, hogy melyik ablakból lett meghívva a képernyővédő
     ssw->show();

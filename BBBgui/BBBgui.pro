@@ -21,18 +21,36 @@ SOURCES += main.cpp\
     radarwindow.cpp \
     information.cpp \
     options.cpp \
+    clockscreensaver.cpp \
+    Blacklib/BlackADC.cpp \
+    Blacklib/BlackCore.cpp \
+    Blacklib/BlackGPIO.cpp \
+    Blacklib/BlackI2C.cpp \
+    Blacklib/BlackPWM.cpp \
+    Blacklib/BlackSPI.cpp \
+    Blacklib/BlackUART.cpp \
     GPIOConst.cpp \
-    GPIOManager.cpp \
-    clockscreensaver.cpp
+    GPIOManager.cpp
 
 HEADERS  += mainwindow.h \
     musicwindow.h \
     radarwindow.h \
     information.h \
     options.h \
+    clockscreensaver.h \
+    guidefines.h \
+    Blacklib/BlackADC.h \
+    Blacklib/BlackCore.h \
+    Blacklib/BlackDef.h \
+    Blacklib/BlackErr.h \
+    Blacklib/BlackGPIO.h \
+    Blacklib/BlackI2C.h \
+    Blacklib/BlackLib.h \
+    Blacklib/BlackPWM.h \
+    Blacklib/BlackSPI.h \
+    Blacklib/BlackUART.h \
     GPIOConst.h \
-    GPIOManager.h \
-    clockscreensaver.h
+    GPIOManager.h
 
 FORMS    += mainwindow.ui \
     musicwindow.ui \

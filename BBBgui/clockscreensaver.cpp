@@ -1,10 +1,11 @@
-#include "clockscreensaver.h"
+﻿#include "clockscreensaver.h"
 #include "ui_clockscreensaver.h"
 #include <ctime>
 #include <QBrush>
 #include "mainwindow.h"
 #include <QTimer>
 #include "musicwindow.h"
+#include "guidefines.h"
 
 ClockScreenSaver::ClockScreenSaver(QWidget *parent) :
     QWidget(parent),

@@ -1,13 +1,8 @@
-#ifndef CLOCKSCREENSAVER_H
+﻿#ifndef CLOCKSCREENSAVER_H
 #define CLOCKSCREENSAVER_H
 
 #include <QWidget>
-
-typedef enum
-{
-    callingMusic = 0x15,
-    callingMain  = 0x37
-} E_CALLING_WINDOW;
+#include "guidefines.h"
 
 namespace Ui {
 class ClockScreenSaver;

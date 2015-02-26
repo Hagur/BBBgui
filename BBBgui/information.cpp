@@ -1,4 +1,4 @@
-#include "information.h"
+﻿#include "information.h"
 #include "ui_information.h"
 #include "time.h"
 #include <ctime>
@@ -20,7 +20,6 @@ Information::Information(QWidget *parent) :
     int hour = now->tm_hour;
     int minute = now->tm_min;
     temp.sprintf("%d.%d.%d %d:%d",year,month,day,hour,minute);
-    ui->timeEdit->setText(temp);
 }
 
 Information::~Information()
