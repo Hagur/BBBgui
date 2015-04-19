@@ -1,4 +1,6 @@
 ﻿#include "mainwindow.h"
+#include "radarwindow.h"
+#include "musicwindow.h"
 #include <QApplication>
 #include "guidefines.h"
 #include "Blacklib/BlackI2C.h"
@@ -8,8 +10,8 @@
 #include <iostream>
 #include "fcntl.h"*/
 
-using namespace std;
 /* USING GLIB.H
+using namespace std;
 static gboolean
 onButtonEvent( GIOChannel *channel,
                GIOCondition condition,
@@ -57,6 +59,8 @@ int main(int argc, char *argv[])
     QString pythonCommand = "python " + scriptfile;
 
     process.start( pythonCommand );
-    while(1);
+
+    process.close();
+    //while(1);
 
 }

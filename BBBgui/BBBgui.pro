@@ -31,7 +31,8 @@ SOURCES += main.cpp\
     Blacklib/BlackSPI.cpp \
     Blacklib/BlackUART.cpp \
     GPIOConst.cpp \
-    GPIOManager.cpp
+    GPIOManager.cpp \
+    radiowindow.cpp
 
 HEADERS  += mainwindow.h \
     musicwindow.h \
@@ -51,11 +52,13 @@ HEADERS  += mainwindow.h \
     Blacklib/BlackSPI.h \
     Blacklib/BlackUART.h \
     GPIOConst.h \
-    GPIOManager.h
+    GPIOManager.h \
+    radiowindow.h
 
 FORMS    += mainwindow.ui \
     musicwindow.ui \
     radarwindow.ui \
     information.ui \
     options.ui \
-    clockscreensaver.ui
+    clockscreensaver.ui \
+    radiowindow.ui

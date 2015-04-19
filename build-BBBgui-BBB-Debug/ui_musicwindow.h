@@ -31,6 +31,7 @@ public:
         if (MusicWindow->objectName().isEmpty())
             MusicWindow->setObjectName(QString::fromUtf8("MusicWindow"));
         MusicWindow->resize(480, 272);
+        MusicWindow->setCursor(QCursor(Qt::BlankCursor));
         radioButton = new QPushButton(MusicWindow);
         radioButton->setObjectName(QString::fromUtf8("radioButton"));
         radioButton->setGeometry(QRect(1, 1, 238, 200));

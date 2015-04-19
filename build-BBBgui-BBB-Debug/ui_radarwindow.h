@@ -31,6 +31,7 @@ public:
         if (RadarWindow->objectName().isEmpty())
             RadarWindow->setObjectName(QString::fromUtf8("RadarWindow"));
         RadarWindow->resize(480, 272);
+        RadarWindow->setCursor(QCursor(Qt::BlankCursor));
         backButton = new QPushButton(RadarWindow);
         backButton->setObjectName(QString::fromUtf8("backButton"));
         backButton->setGeometry(QRect(379, 1, 100, 270));

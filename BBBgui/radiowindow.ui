@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MusicWindow</class>
- <widget class="QWidget" name="MusicWindow">
+ <class>RadioWindow</class>
+ <widget class="QWidget" name="RadioWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,44 +16,6 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="radioButton">
-   <property name="geometry">
-    <rect>
-     <x>1</x>
-     <y>1</y>
-     <width>238</width>
-     <height>200</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Umpush</family>
-     <pointsize>30</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>RÁDIÓ</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="mp3Button">
-   <property name="geometry">
-    <rect>
-     <x>241</x>
-     <y>1</y>
-     <width>238</width>
-     <height>200</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Umpush</family>
-     <pointsize>30</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>MP3</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="backButton">
    <property name="geometry">
     <rect>
@@ -70,7 +32,75 @@
     </font>
    </property>
    <property name="text">
-    <string>VISSZA</string>
+    <string>KILÉPÉS</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="volumeUpButton">
+   <property name="geometry">
+    <rect>
+     <x>1</x>
+     <y>1</y>
+     <width>138</width>
+     <height>98</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Umpush</family>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>VOL+</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="volumeDownButton">
+   <property name="geometry">
+    <rect>
+     <x>1</x>
+     <y>101</y>
+     <width>138</width>
+     <height>99</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Umpush</family>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>VOL-</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="changeButton">
+   <property name="geometry">
+    <rect>
+     <x>342</x>
+     <y>1</y>
+     <width>138</width>
+     <height>199</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Umpush</family>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Csatorna
+váltás</string>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="channelNumber">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>86</y>
+     <width>200</width>
+     <height>100</height>
+    </rect>
    </property>
   </widget>
  </widget>
