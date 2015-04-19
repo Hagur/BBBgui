@@ -13,7 +13,8 @@ target.files = BBBgui
 target.path = /home/debian
 INSTALLS = target
 TEMPLATE = app
-
+INCLUDEPATH += $$system(pkg-config --cflags glib-2.0 | sed -e "s/-I//g")
+LIBS += -L/usr/include/glib-2.0
 
 SOURCES += main.cpp\
         mainwindow.cpp \
