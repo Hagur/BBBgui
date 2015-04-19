@@ -18,9 +18,7 @@ public:
 private slots:
     int SeekChannel();                      // Új csatorna keresése
 
-    void DecreaseVolume();                  // Hangerő csökkentése
-
-    void IncreaseVolume();                  // Hangerő növelése
+    void ControlVolume();                   // Hangerő beállítása
 
     void on_volumeUpButton_clicked();       // Hangerő növelés megnyomása
 

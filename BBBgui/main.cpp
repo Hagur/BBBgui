@@ -59,8 +59,6 @@ int main(int argc, char *argv[])
     QString pythonCommand = "python " + scriptfile;
 
     process.start( pythonCommand );
-
+    process.waitForFinished();
     process.close();
-    //while(1);
-
 }
