@@ -1,6 +1,8 @@
 ﻿#ifndef GUIDEFINES_H
 #define GUIDEFINES_H
 
+#define VOL_TIMER   1500        // Megmondja, hogy mennyi ideig legyen mutatva a hangerő annak állítása után (ms)
+
 typedef enum
 {
     callingMusic = 0x15,

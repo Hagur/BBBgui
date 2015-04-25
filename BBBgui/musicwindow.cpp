@@ -3,6 +3,9 @@
 #include "clockscreensaver.h"
 #include <QTimer>
 #include "mainwindow.h"
+#include "radiowindow.h"
+#include <QProcess>
+#include <QString>
 
 MusicWindow::MusicWindow(QWidget *parent) :
     QWidget(parent),
@@ -43,4 +46,24 @@ void MusicWindow::mwTimerOver()
     ssw->callingWindow = callingMusic;                   // Eltárolásra kerül, hogy melyik ablakból lett meghívva a képernyővédő
     ssw->show();
     this->close();
+}
+
+void MusicWindow::on_radioButton_clicked()
+{
+    RadioWindow *radioWindow = new( RadioWindow );              // Az új ablak létrehozása
+
+    QProcess process;                                           // Process létrehozása
+    QString scriptfile = "/root/python_test/RadioDriver.py";    // Elindítandó script helyének megadása a program helyéhez relatívan
+    QString pythonCommand = "python " + scriptfile;
+    QString turnOnRadio = "/root/python_test/turnon.sh";
+
+    process.start( turnOnRadio );                               // Rádió bekapcsolása
+    process.waitForFinished();                                  // Várakozás, amíg lefut a process
+    process.close();                                            // Process bezárása
+    process.start( pythonCommand );                             // Rádió konfigurálása
+    process.waitForFinished();                                  // Várakozás, amíg lefut a process
+    process.close();                                            // Process bezárása
+
+    radioWindow->show();                                        // Az új ablak aktiválása
+    this->close();                                              // A MusicWindow bezárása
 }

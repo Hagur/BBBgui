@@ -57,7 +57,10 @@ int main(int argc, char *argv[])
     QString scriptfile = "/root/python_test/RadioDriver.py";  // Elindítandó script helyének megadása a program helyéhez relatívan
 
     QString pythonCommand = "python " + scriptfile;
-
+    QString turnOnRadio = "/root/python_test/reset.sh";
+    process.start( turnOnRadio );
+    process.waitForFinished();
+    process.close();
     process.start( pythonCommand );
     process.waitForFinished();
     process.close();

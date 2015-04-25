@@ -21,6 +21,8 @@ private slots:
 
     void mwTimerOver();
 
+    void on_radioButton_clicked();
+
 private:
     Ui::MusicWindow *ui;
 };

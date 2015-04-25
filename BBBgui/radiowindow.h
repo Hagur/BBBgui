@@ -13,10 +13,13 @@ class RadioWindow : public QWidget
 
 public:
     explicit RadioWindow(QWidget *parent = 0);
+    QTimer *volTimer;
     ~RadioWindow();
 
 private slots:
-    int SeekChannel();                      // Új csatorna keresése
+    int GetChannel();                       // Aktuális csatorna frekvenciájának lekérdezése
+
+    void SeekChannel();                     // Új csatorna keresése
 
     void ControlVolume();                   // Hangerő beállítása
 
@@ -27,6 +30,8 @@ private slots:
     void on_backButton_clicked();           // Kilépés gomb megnyomása
 
     void on_changeButton_clicked();         // Csatorna keresés megnyomása
+
+    void volTimerOver();
 
 private:
     Ui::RadioWindow *ui;

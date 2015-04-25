@@ -93,14 +93,19 @@
 váltás</string>
    </property>
   </widget>
-  <widget class="QLCDNumber" name="channelNumber">
+  <widget class="QLineEdit" name="radioEdit">
    <property name="geometry">
     <rect>
      <x>140</x>
-     <y>51</y>
-     <width>200</width>
-     <height>100</height>
+     <y>50</y>
+     <width>199</width>
+     <height>98</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Umpush</family>
+    </font>
    </property>
   </widget>
  </widget>
