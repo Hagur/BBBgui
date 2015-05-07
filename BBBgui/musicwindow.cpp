@@ -7,10 +7,11 @@
 #include <QProcess>
 #include <QString>
 
-MusicWindow::MusicWindow(QWidget *parent) :
+MusicWindow::MusicWindow(bool ssEnabled, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MusicWindow)
 {
+    ssEnabler = ssEnabled;
     ui->setupUi(this);
     setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::CustomizeWindowHint);     // A címsor kikapcsolása
     setStyleSheet("background-color:black");                                            // Ablak hátttérszíne
@@ -18,9 +19,13 @@ MusicWindow::MusicWindow(QWidget *parent) :
     ui->mp3Button->setStyleSheet("background-color:rgb(0,194,251);");                   // MP3 gomb háttérszíne
     ui->radioButton->setStyleSheet("background-color:rgb(0,194,251);");                 // Rádió gomb háttérszíne
     mwTimer = new QTimer(this);
-    mwTimer->setSingleShot(true);                                                        // Egyszeri lefutású timer
-    connect(mwTimer, SIGNAL(timeout()), this, SLOT(mwTimerOver()));                      // Az ssTimer timeout-jánál a timerOver() függvény lesz meghívva
-    mwTimer->start(8000);                                                                // Timer elindítása
+    if( ssEnabler == true )
+    {
+        // Engedélyezve van a képernyővédő
+        mwTimer->setSingleShot(true);                                                   // Egyszeri lefutású timer
+        connect(mwTimer, SIGNAL(timeout()), this, SLOT(mwTimerOver()));                 // Az ssTimer timeout-jánál a timerOver() függvény lesz meghívva
+        mwTimer->start(4000);                                                           // Timer elindítása
+    }
 }
 
 MusicWindow::~MusicWindow()
@@ -32,7 +37,7 @@ void MusicWindow::on_backButton_clicked()
 {
     mwTimer->stop();
     delete mwTimer;
-    MainWindow *w = new (MainWindow);
+    MainWindow *w = new MainWindow(ssEnabler);
     w->show();
     this->close();
 }
@@ -42,7 +47,7 @@ void MusicWindow::mwTimerOver()
     // Lejárt az időzítő, bejön a képernyővédő
     mwTimer->stop();
     delete mwTimer;
-    ClockScreenSaver *ssw = new( ClockScreenSaver );
+    ClockScreenSaver *ssw = new ClockScreenSaver(ssEnabler);
     ssw->callingWindow = callingMusic;                   // Eltárolásra kerül, hogy melyik ablakból lett meghívva a képernyővédő
     ssw->show();
     this->close();
@@ -50,7 +55,9 @@ void MusicWindow::mwTimerOver()
 
 void MusicWindow::on_radioButton_clicked()
 {
-    RadioWindow *radioWindow = new( RadioWindow );              // Az új ablak létrehozása
+    mwTimer->stop();
+    delete mwTimer;
+    RadioWindow *radioWindow = new RadioWindow(ssEnabler);              // Az új ablak létrehozása
 
     QProcess process;                                           // Process létrehozása
     QString scriptfile = "/root/python_test/RadioDriver.py";    // Elindítandó script helyének megadása a program helyéhez relatívan

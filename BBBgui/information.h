@@ -1,4 +1,4 @@
-#ifndef INFORMATION_H
+﻿#ifndef INFORMATION_H
 #define INFORMATION_H
 
 #include <QWidget>
@@ -12,7 +12,8 @@ class Information : public QWidget
     Q_OBJECT
 
 public:
-    explicit Information(QWidget *parent = 0);
+    explicit Information(bool ssEnabled, QWidget *parent = 0);
+    bool ssEnabler;
     ~Information();
 
 private slots:

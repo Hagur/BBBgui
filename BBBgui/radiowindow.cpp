@@ -8,10 +8,11 @@
 #include <QTextStream>
 #include <QTimer>
 
-RadioWindow::RadioWindow(QWidget *parent) :
+RadioWindow::RadioWindow(bool ssEnabled, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::RadioWindow)
 {
+    ssEnabler = ssEnabled;
     ui->setupUi(this);
     setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::CustomizeWindowHint);     // A címsor kikapcsolása
     setStyleSheet("background-color:white");                                            // Ablak hátttérszíne
@@ -22,6 +23,19 @@ RadioWindow::RadioWindow(QWidget *parent) :
     volTimer = new QTimer(this);
     volTimer->setSingleShot(true);                                                      // Egyszeri lefutású timer
     connect(volTimer, SIGNAL(timeout()), this, SLOT(volTimerOver()));                   // A volTimer timeout-jánál a timerOver() függvény lesz meghívva
+    // Indulási frekvencia kiírása
+    QString temp = "";
+    int NewChannel = 0;
+    int Remain = 0;
+    NewChannel = RadioWindow::GetChannel();
+    this->ui->radioEdit->setAlignment(Qt::AlignCenter);
+    if(( NewChannel > 860) && ( NewChannel < 1090 ))
+    {
+        Remain = NewChannel % 10;
+        NewChannel /= 10;
+        temp.sprintf("%d.%d MHz", NewChannel, Remain);      // Kiírandó szöveg betöltése a temp változóba
+        this->ui->radioEdit->setText(temp);                 // Szöveg kiírása a kijelzőre
+    }
 }
 
 RadioWindow::~RadioWindow()
@@ -57,7 +71,8 @@ void RadioWindow::SeekChannel()
 // Aktuális csatorna lekérdezése
 int RadioWindow::GetChannel()
 {
-    QFile file("/root/python_test/setting");                    // Csatorna beolvasása a setting-ből
+    QFile file("/root/python_test/settings.txt");               // Csatorna beolvasása a setting-ből
+    file.open(QIODevice::ReadOnly);
     QTextStream in(&file);
     QString line = in.readLine();
     RadioChannel = line.split(" ")[0].toInt();                  // Csatorna átkonvertálása int-re
@@ -93,12 +108,12 @@ void RadioWindow::on_volumeDownButton_clicked()
 void RadioWindow::on_backButton_clicked()
 {
     QProcess process;                                       // Process létrehozása
-    QString turnOnRadio = "/root/python_test/turnon.sh";
-    process.start( turnOnRadio );                           // Rádió bekapcsolása
+    QString turnOffRadio = "/root/python_test/turnoff.sh";
+    process.start( turnOffRadio );                          // Rádió kikapcsolása
     process.waitForFinished();                              // Várakozás, amíg lefut a process
     process.close();                                        // Process bezárása
     delete volTimer;                                        // Az időzítő törlése
-    MusicWindow *w = new (MusicWindow);                     // Ablak példányosítása
+    MusicWindow *w = new MusicWindow(ssEnabler);                     // Ablak példányosítása
     w->show();                                              // Ablak megjelenítése
     this->close();                                          // Rádióablak bezárása
 }
@@ -123,11 +138,10 @@ void RadioWindow::on_changeButton_clicked()
 void RadioWindow::volTimerOver()
 {
     QString temp = "";
-    int ActChannel = 0;
+    int ActChannel = 900;
     int Remain = 0;
     // Lejárt az időzítő, bejön a képernyővédő
     RadioWindow::volTimer->stop();
-    delete RadioWindow::volTimer;
     ActChannel = RadioWindow::GetChannel();
     if(( ActChannel > 860) && ( ActChannel < 1090 ))
     {

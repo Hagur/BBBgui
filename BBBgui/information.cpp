@@ -4,10 +4,11 @@
 #include <ctime>
 #include "mainwindow.h"
 
-Information::Information(QWidget *parent) :
+Information::Information(bool ssEnabled, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Information)
 {
+    ssEnabler = ssEnabled;
     QString temp="";
     ui->setupUi(this);
     setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::CustomizeWindowHint);     // A címsor kikapcsolása
@@ -29,7 +30,7 @@ Information::~Information()
 
 void Information::on_pushButton_clicked()
 {
-    MainWindow *w = new( MainWindow );
+    MainWindow *w = new MainWindow(ssEnabler);
     w->show();
     this->close();
 }

@@ -12,7 +12,8 @@ class mp3window : public QWidget
     Q_OBJECT
 
 public:
-    explicit mp3window(QWidget *parent = 0);
+    explicit mp3window(bool ssEnabled, QWidget *parent = 0);
+    bool ssEnabler;
     ~mp3window();
 
 private slots:

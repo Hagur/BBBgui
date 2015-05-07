@@ -105,6 +105,7 @@ váltás</string>
    <property name="font">
     <font>
      <family>Umpush</family>
+     <pointsize>25</pointsize>
     </font>
    </property>
   </widget>

@@ -12,7 +12,8 @@ class RadioWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit RadioWindow(QWidget *parent = 0);
+    explicit RadioWindow(bool ssEnabled, QWidget *parent = 0);
+    bool ssEnabler;
     QTimer *volTimer;
     ~RadioWindow();
 

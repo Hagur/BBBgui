@@ -1,4 +1,4 @@
-#ifndef OPTIONS_H
+﻿#ifndef OPTIONS_H
 #define OPTIONS_H
 
 #include <QWidget>
@@ -15,7 +15,8 @@ class Options : public QWidget
     Q_OBJECT
 
 public:
-    explicit Options(QWidget *parent = 0);
+    explicit Options(bool ssEnabled, QWidget *parent = 0);
+    bool ssEnabler;
     ~Options();
 
 private slots:

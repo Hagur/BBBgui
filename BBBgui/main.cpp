@@ -48,11 +48,12 @@ int main( int argc, char** argv )
 /* ORIGINAL MAIN FUNCTION*/
 int main(int argc, char *argv[])
 {
-    /*QApplication a(argc, argv);
+    QApplication a(argc, argv);
     MainWindow w;
     w.show();
-    return a.exec();*/
 
+    return a.exec();
+/*
     QProcess process;       // Process létrehozása
     QString scriptfile = "/root/python_test/RadioDriver.py";  // Elindítandó script helyének megadása a program helyéhez relatívan
 
@@ -63,5 +64,5 @@ int main(int argc, char *argv[])
     process.close();
     process.start( pythonCommand );
     process.waitForFinished();
-    process.close();
+    process.close();*/
 }

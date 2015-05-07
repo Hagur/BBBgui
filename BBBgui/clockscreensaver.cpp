@@ -7,10 +7,11 @@
 #include "musicwindow.h"
 #include "guidefines.h"
 
-ClockScreenSaver::ClockScreenSaver(QWidget *parent) :
+ClockScreenSaver::ClockScreenSaver(bool ssEnabled, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ClockScreenSaver)
 {
+    ssEnabler = ssEnabled;
     QString temp="";
     setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::CustomizeWindowHint);     // A címsor kikapcsolása
     setStyleSheet("background-color:black");                                            // Ablak hátttérszíne
@@ -34,12 +35,12 @@ void ClockScreenSaver::on_backButton_clicked()
 {
     if( this->callingWindow == callingMusic )
     {
-        MusicWindow *mw = new (MusicWindow);
+        MusicWindow *mw = new MusicWindow(ssEnabler);
         mw->show();
     }
     else
     {
-        MainWindow *w = new (MainWindow);
+        MainWindow *w = new MainWindow(ssEnabler);
         w->show();
     }
     this->close();

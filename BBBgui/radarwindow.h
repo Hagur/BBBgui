@@ -12,7 +12,8 @@ class RadarWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit RadarWindow(QWidget *parent = 0);
+    explicit RadarWindow(bool ssEnabled, QWidget *parent = 0);
+    bool ssEnabler;
     ~RadarWindow();
 
 private slots:

@@ -12,7 +12,8 @@ class MusicWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit MusicWindow(QWidget *parent = 0);
+    explicit MusicWindow(bool ssEnabled, QWidget *parent = 0);
+    bool ssEnabler;
     QTimer *mwTimer;
     ~MusicWindow();
 

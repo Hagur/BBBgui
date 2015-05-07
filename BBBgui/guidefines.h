@@ -11,5 +11,6 @@ typedef enum
 
 static int RadioVolume = 6;
 static int RadioChannel = 1000;
+static bool screenSaverEnabled;
 
 #endif // GUIDEFINES_H

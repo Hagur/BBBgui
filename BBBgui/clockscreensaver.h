@@ -13,7 +13,8 @@ class ClockScreenSaver : public QWidget
     Q_OBJECT
 
 public:
-    explicit ClockScreenSaver(QWidget *parent = 0);
+    explicit ClockScreenSaver(bool ssEnabled, QWidget *parent = 0);
+    bool ssEnabler;
     E_CALLING_WINDOW callingWindow;
     ~ClockScreenSaver();
 

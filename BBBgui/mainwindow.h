@@ -1,4 +1,4 @@
-#ifndef MAINWINDOW_H
+﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
@@ -15,7 +15,9 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    MainWindow(bool ssEnabled, QWidget *parent = 0);
     QTimer *wTimer;
+    bool ssEnabler;
     GPIO::GPIOManager* gp = GPIO::GPIOManager::getInstance();
     ~MainWindow();
 

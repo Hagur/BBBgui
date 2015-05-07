@@ -1,10 +1,11 @@
 ﻿#include "mp3window.h"
 #include "ui_mp3window.h"
 
-mp3window::mp3window(QWidget *parent) :
+mp3window::mp3window(bool ssEnabled, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::mp3window)
 {
+    ssEnabler = ssEnabled;
     ui->setupUi(this);
     setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::CustomizeWindowHint);     // A címsor kikapcsolása
     setStyleSheet("background-color:white");                                            // Ablak hátttérszíne

@@ -4,10 +4,11 @@
 #include <QRectF>
 #include "mainwindow.h"
 
-RadarWindow::RadarWindow(QWidget *parent) :
+RadarWindow::RadarWindow(bool ssEnabled, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::RadarWindow)
 {
+    ssEnabler = ssEnabled;
     ui->setupUi(this);
     QPixmap radar("/home/debian/car.png");
     ui->picLabel->setPixmap(radar);
@@ -24,7 +25,7 @@ RadarWindow::~RadarWindow()
 
 void RadarWindow::on_backButton_clicked()
 {
-    MainWindow *w = new( MainWindow );
+    MainWindow *w = new MainWindow(ssEnabler);
     w->show();
     this->close();
 }

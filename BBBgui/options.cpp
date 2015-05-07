@@ -1,5 +1,6 @@
-#include "options.h"
+﻿#include "options.h"
 #include "ui_options.h"
+#include "guidefines.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,11 +10,14 @@
 #include <poll.h>
 #include <fstream>
 #include "mainwindow.h"
+#include <QCheckBox>
+#include "guidefines.h"
 
-Options::Options(QWidget *parent) :
+Options::Options(bool ssEnabled, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Options)
 {
+    ssEnabler = ssEnabled;
     QString temp = "";
     ui->setupUi(this);
     setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::CustomizeWindowHint);     // A címsor kikapcsolása
@@ -21,6 +25,16 @@ Options::Options(QWidget *parent) :
     Options::getBrightness();
     temp.sprintf("%d%", brightnessValue);
     ui->brightnessLine->setText(temp);
+    ui->ssBox->addItem("On");
+    ui->ssBox->addItem("Off");
+    if( ssEnabled == true )
+    {
+        ui->ssBox->setCurrentIndex(0);
+    }
+    else
+    {
+        ui->ssBox->setCurrentIndex(1);
+    }
 }
 
 Options::~Options()
@@ -89,7 +103,15 @@ int Options::on_decreaseButton_clicked()
 
 void Options::on_backButton_clicked()
 {
-    MainWindow *w = new( MainWindow );
+    if( ui->ssBox->currentText() == "On" )
+    {
+        ssEnabler = true;
+    }
+    else
+    {
+        ssEnabler = false;
+    }
+    MainWindow *w = new MainWindow(ssEnabler);
     w->show();
     this->close();
 }
@@ -111,3 +133,5 @@ int Options::getBrightness()
     stream.close();
     return 0;
 }
+
+
