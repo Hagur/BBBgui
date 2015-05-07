@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>RadioWindow</class>
- <widget class="QWidget" name="RadioWindow">
+ <class>mp3window</class>
+ <widget class="QWidget" name="mp3window">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -10,31 +10,9 @@
     <height>272</height>
    </rect>
   </property>
-  <property name="cursor">
-   <cursorShape>BlankCursor</cursorShape>
-  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="backButton">
-   <property name="geometry">
-    <rect>
-     <x>1</x>
-     <y>202</y>
-     <width>478</width>
-     <height>68</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Umpush</family>
-     <pointsize>30</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>KILÉPÉS</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="volumeUpButton">
    <property name="geometry">
     <rect>
@@ -60,7 +38,7 @@
      <x>1</x>
      <y>101</y>
      <width>138</width>
-     <height>99</height>
+     <height>98</height>
     </rect>
    </property>
    <property name="font">
@@ -73,91 +51,76 @@
     <string>VOL-</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="changeButton">
+  <widget class="QLineEdit" name="infoEdit">
    <property name="geometry">
     <rect>
-     <x>342</x>
+     <x>140</x>
      <y>1</y>
-     <width>138</width>
+     <width>338</width>
      <height>98</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="prevButton">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>101</y>
+     <width>113</width>
+     <height>98</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Previous 
+ track</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="playButton">
+   <property name="geometry">
+    <rect>
+     <x>253</x>
+     <y>101</y>
+     <width>113</width>
+     <height>98</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Play
+/
+Stop</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="nextButton">
+   <property name="geometry">
+    <rect>
+     <x>366</x>
+     <y>101</y>
+     <width>113</width>
+     <height>98</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Next 
+ track</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="exitButton">
+   <property name="geometry">
+    <rect>
+     <x>1</x>
+     <y>200</y>
+     <width>478</width>
+     <height>68</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Umpush</family>
-     <pointsize>20</pointsize>
+     <pointsize>30</pointsize>
     </font>
    </property>
    <property name="text">
-    <string>Csatorna
-váltás</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="radioEdit">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>1</y>
-     <width>199</width>
-     <height>98</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Umpush</family>
-    </font>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="channel1Button">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>101</y>
-     <width>168</width>
-     <height>49</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>1</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="channel2Button">
-   <property name="geometry">
-    <rect>
-     <x>310</x>
-     <y>101</y>
-     <width>169</width>
-     <height>49</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>2</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="channel3Button">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>151</y>
-     <width>168</width>
-     <height>49</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>3</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="channel4Button">
-   <property name="geometry">
-    <rect>
-     <x>310</x>
-     <y>151</y>
-     <width>169</width>
-     <height>49</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>4</string>
+    <string>KILÉPÉS</string>
    </property>
   </widget>
  </widget>

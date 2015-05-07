@@ -14,7 +14,7 @@ RadioWindow::RadioWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::CustomizeWindowHint);     // A címsor kikapcsolása
-    setStyleSheet("background-color:black");                                            // Ablak hátttérszíne
+    setStyleSheet("background-color:white");                                            // Ablak hátttérszíne
     ui->backButton->setStyleSheet("background-color:rgb(0,194,251);");                  // Kilépés gomb háttérszíne
     ui->changeButton->setStyleSheet("background-color:rgb(0,194,251);");                // Csatorna váltás gomb háttérszíne
     ui->volumeUpButton->setStyleSheet("background-color:rgb(0,194,251);");              // Hangerő+ gomb háttérszíne
@@ -136,4 +136,44 @@ void RadioWindow::volTimerOver()
         temp.sprintf("%d.%d MHz", ActChannel, Remain);      // Kiírandó szöveg betöltése a temp változóba
         this->ui->radioEdit->setText(temp);                 // Szöveg kiírása a kijelzőre
     }
+}
+
+void RadioWindow::on_channel1Button_clicked()
+{
+
+}
+
+void RadioWindow::on_channel1Button_released()
+{
+
+}
+
+void RadioWindow::on_channel2Button_clicked()
+{
+
+}
+
+void RadioWindow::on_channel2Button_released()
+{
+
+}
+
+void RadioWindow::on_channel3Button_clicked()
+{
+
+}
+
+void RadioWindow::on_channel3Button_released()
+{
+
+}
+
+void RadioWindow::on_channel4Button_clicked()
+{
+
+}
+
+void RadioWindow::on_channel4Button_released()
+{
+
 }

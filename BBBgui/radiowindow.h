@@ -33,6 +33,22 @@ private slots:
 
     void volTimerOver();
 
+    void on_channel1Button_clicked();
+
+    void on_channel1Button_released();
+
+    void on_channel2Button_clicked();
+
+    void on_channel2Button_released();
+
+    void on_channel3Button_clicked();
+
+    void on_channel3Button_released();
+
+    void on_channel4Button_clicked();
+
+    void on_channel4Button_released();
+
 private:
     Ui::RadioWindow *ui;
 };
