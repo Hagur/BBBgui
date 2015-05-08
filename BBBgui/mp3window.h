@@ -14,6 +14,9 @@ class mp3window : public QWidget
 public:
     explicit mp3window(bool ssEnabled, QWidget *parent = 0);
     bool ssEnabler;
+    int musicIndex;
+    int musicElements;
+    QStringList mp3Files;
     ~mp3window();
 
 private slots:

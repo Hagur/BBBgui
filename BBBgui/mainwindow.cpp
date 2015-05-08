@@ -57,8 +57,8 @@ void MainWindow::on_musicButton_clicked()
     MainWindow::wTimer->stop();                     // Timer leállítása
     delete MainWindow::wTimer;
     MusicWindow *mw = new MusicWindow((ssEnabler));             // Új ablak példányosítása
-    mw->show();                                     // Új ablak megnyitása
     this->close();                                  // mainwindow bezárása
+    mw->show();                                     // Új ablak megnyitása
 }
 
 void MainWindow::on_optionsButton_clicked()
@@ -66,8 +66,8 @@ void MainWindow::on_optionsButton_clicked()
     MainWindow::wTimer->stop();
     delete MainWindow::wTimer;
     Options *ow = new Options(ssEnabler);
-    ow->show();                                     // Options ablak elindítása
     this->close();                                  // mainwindow bezárása
+    ow->show();                                     // Options ablak elindítása
 }
 
 void MainWindow::on_radarButton_clicked()
@@ -75,8 +75,8 @@ void MainWindow::on_radarButton_clicked()
     MainWindow::wTimer->stop();
     delete MainWindow::wTimer;
     RadarWindow *rw = new RadarWindow(ssEnabler);
-    rw->show();
     this->close();                                  // mainwindow bezárása
+    rw->show();
 }
 
 void MainWindow::on_dataButton_clicked()
@@ -84,8 +84,8 @@ void MainWindow::on_dataButton_clicked()
     MainWindow::wTimer->stop();
     delete MainWindow::wTimer;
     Information *iw = new Information(ssEnabler);
-    iw->show();
     this->close();                                  // mainwindow bezárása
+    iw->show();
 }
 
 void MainWindow::wTimerOver()
@@ -95,6 +95,6 @@ void MainWindow::wTimerOver()
     delete MainWindow::wTimer;
     ClockScreenSaver *ssw = new ClockScreenSaver(ssEnabler);
     ssw->callingWindow = callingMain;                   // Eltárolásra kerül, hogy melyik ablakból lett meghívva a képernyővédő
-    ssw->show();
     this->close();
+    ssw->show();
 }

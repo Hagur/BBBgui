@@ -113,9 +113,9 @@ void RadioWindow::on_backButton_clicked()
     process.waitForFinished();                              // Várakozás, amíg lefut a process
     process.close();                                        // Process bezárása
     delete volTimer;                                        // Az időzítő törlése
-    MusicWindow *w = new MusicWindow(ssEnabler);                     // Ablak példányosítása
-    w->show();                                              // Ablak megjelenítése
+    MusicWindow *w = new MusicWindow(ssEnabler);            // Ablak példányosítása
     this->close();                                          // Rádióablak bezárása
+    w->show();                                              // Ablak megjelenítése
 }
 
 void RadioWindow::on_changeButton_clicked()

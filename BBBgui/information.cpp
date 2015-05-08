@@ -31,6 +31,6 @@ Information::~Information()
 void Information::on_pushButton_clicked()
 {
     MainWindow *w = new MainWindow(ssEnabler);
-    w->show();
     this->close();
+    w->show();
 }

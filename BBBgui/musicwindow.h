@@ -24,6 +24,8 @@ private slots:
 
     void on_radioButton_clicked();
 
+    void on_mp3Button_clicked();
+
 private:
     Ui::MusicWindow *ui;
 };

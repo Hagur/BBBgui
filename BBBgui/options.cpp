@@ -112,8 +112,8 @@ void Options::on_backButton_clicked()
         ssEnabler = false;
     }
     MainWindow *w = new MainWindow(ssEnabler);
-    w->show();
     this->close();
+    w->show();
 }
 
 int Options::getBrightness()

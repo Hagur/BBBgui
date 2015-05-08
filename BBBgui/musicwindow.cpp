@@ -4,6 +4,7 @@
 #include <QTimer>
 #include "mainwindow.h"
 #include "radiowindow.h"
+#include "mp3window.h"
 #include <QProcess>
 #include <QString>
 
@@ -38,8 +39,8 @@ void MusicWindow::on_backButton_clicked()
     mwTimer->stop();
     delete mwTimer;
     MainWindow *w = new MainWindow(ssEnabler);
-    w->show();
     this->close();
+    w->show();
 }
 
 void MusicWindow::mwTimerOver()
@@ -49,15 +50,15 @@ void MusicWindow::mwTimerOver()
     delete mwTimer;
     ClockScreenSaver *ssw = new ClockScreenSaver(ssEnabler);
     ssw->callingWindow = callingMusic;                   // Eltárolásra kerül, hogy melyik ablakból lett meghívva a képernyővédő
-    ssw->show();
     this->close();
+    ssw->show();
 }
 
 void MusicWindow::on_radioButton_clicked()
 {
     mwTimer->stop();
     delete mwTimer;
-    RadioWindow *radioWindow = new RadioWindow(ssEnabler);              // Az új ablak létrehozása
+    RadioWindow *radioWindow = new RadioWindow(ssEnabler);      // Az új ablak létrehozása
 
     QProcess process;                                           // Process létrehozása
     QString scriptfile = "/root/python_test/RadioDriver.py";    // Elindítandó script helyének megadása a program helyéhez relatívan
@@ -71,6 +72,15 @@ void MusicWindow::on_radioButton_clicked()
     process.waitForFinished();                                  // Várakozás, amíg lefut a process
     process.close();                                            // Process bezárása
 
-    radioWindow->show();                                        // Az új ablak aktiválása
     this->close();                                              // A MusicWindow bezárása
+    radioWindow->show();                                        // Az új ablak aktiválása
+}
+
+void MusicWindow::on_mp3Button_clicked()
+{
+    mwTimer->stop();
+    delete mwTimer;
+    mp3window *mp3Window = new mp3window(ssEnabler);
+    this->close();
+    mp3Window->show();
 }

@@ -36,12 +36,13 @@ void ClockScreenSaver::on_backButton_clicked()
     if( this->callingWindow == callingMusic )
     {
         MusicWindow *mw = new MusicWindow(ssEnabler);
+        this->close();
         mw->show();
     }
     else
     {
         MainWindow *w = new MainWindow(ssEnabler);
+        this->close();
         w->show();
     }
-    this->close();
 }

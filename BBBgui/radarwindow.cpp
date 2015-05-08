@@ -26,6 +26,6 @@ RadarWindow::~RadarWindow()
 void RadarWindow::on_backButton_clicked()
 {
     MainWindow *w = new MainWindow(ssEnabler);
-    w->show();
     this->close();
+    w->show();
 }

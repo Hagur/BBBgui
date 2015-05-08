@@ -71,8 +71,8 @@
     </rect>
    </property>
    <property name="text">
-    <string>Previous 
- track</string>
+    <string>Előző 
+ szám</string>
    </property>
   </widget>
   <widget class="QPushButton" name="playButton">
@@ -85,9 +85,9 @@
     </rect>
    </property>
    <property name="text">
-    <string>Play
+    <string>Lejátszás
 /
-Stop</string>
+Megállítás</string>
    </property>
   </widget>
   <widget class="QPushButton" name="nextButton">
@@ -100,8 +100,8 @@ Stop</string>
     </rect>
    </property>
    <property name="text">
-    <string>Next 
- track</string>
+    <string>Következő 
+szám</string>
    </property>
   </widget>
   <widget class="QPushButton" name="exitButton">
